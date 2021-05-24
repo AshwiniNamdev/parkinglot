@@ -61,14 +61,6 @@ node src/index.js <path_to_file.txt>
 
 **STEP 2**: `npm start` or `npm run start` will start the application. It is equivalent to `node src/index.js`
 
-#### Console Application
-
-Navigate to `bin/` folder and open `parking_lot` with double click. It'll open a terminal where different [commands](#list-of-user-commands) can be typed in.
-You may face permission related issues, please allow opening applications from unauthorized developers as it's blocked due to security reasons.
-If you're using macOS catalina, you'll be prompted security warning as this binary is not notarized. Learn more about Notarization [here](https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution).
-
-If you're still facing issues, please build the console application locally. Kindly refer [Build Script](#build-script) section to build locally.
-
 ## List of User Commands
 
 Users can interact with the Parking Lot system via a following simple set of commands which produce a specific output:
@@ -185,14 +177,6 @@ Repository must contain:
 
 `package.json`
 
-- must have valid name, author and license
-- must have proper keywords
-- must have valid version string
-- must have scripts definitions
-- must point to precise version for dependencies
-- should not overlap dependencies
-- must have devDependencies
-
 `.gitignore` must contain `build/`, `dist/`, `out/`, `node_modules/` folders.
 
 #### Lint tests
@@ -201,60 +185,6 @@ Repository must contain:
 
 `node_modules/eslint/bin/eslint.js --fix src/` can be run to fix lint errors.
 
-#### Code Coverage
-
-To see code coverage report, run `npm run test`.
-
-The current code coverage for the tests are following:
-
-| Type  | Percentage  |
-|---|---|
-| Statement  | 91.48  |
-| Branch  | 69.57  |
-| Function  | 89.53  |
-| Lines  | 91.25  |
-
-- **Function coverage:** Has each function (or subroutine) in the program been called?
-- **Statement coverage:** Has each statement in the program been executed?
-- **Branch coverage:** Has each branch (also called DD-path) of each control structure (such as in if and case statements) been executed?
-- **Line coverage:** Has each executable line in the source file been executed?
-
-
-**NOTE:** Code coverage is added to the mocha tests (`npm run test`) using **[nyc](https://www.npmjs.com/package/nyc)**.
-You can see the code-coverage report in terminal as well as detailed HTML report inside `coverage/` folder.
-Go to `coverage/` folder and open `index.html`.
-
-## Build Script
-
-`npm run build` will build the executable(console application) inside `bin/` folder which can be opened by double clicking on it.
-Make sure you've already done with `npm install`, if not, please install dependencies first. Please refer [this](#explained) section for the same.
-
-> Note: [pkg](https://www.npmjs.com/package/pkg) is used to package the Node.js application into an executable. Learn more [here](https://www.npmjs.com/package/pkg).
-
-## Documentation
-
-> Writing code is easy but maintaining isn’t? One can read one's code but it's difficult for others to read.
-With this spirit, I've added [JSDoc](https://www.npmjs.com/package/jsdoc) comments in code.
-
-Go to `out/` folder and open `global.html`. You'll find the documentation for the source code there.
-
-**To generates the docs locally**, open terminal and run `npm run create-docs`.
-
-## Dependencies Used
-
-- [Mocha](https://mochajs.org/): A JavaScript test framework for Node.js programs. Learn more [here](https://mochajs.org/).
-
-- [Chai](https://www.chaijs.com/): A BDD/TDD assertion library for Node.js and it can be paired with any JS testing framework. Learn more [here](https://www.chaijs.com/).
-
-- [nyc](https://www.npmjs.com/package/nyc): A JS code coverage tool extensively tested with Mocha for measuring code coverage. Learn more [here](https://istanbul.js.org/docs/tutorials/mocha/).
-
-- [Chalk](https://www.npmjs.com/package/chalk): A npm module used to style terminal string. Learn more [here](https://www.npmjs.com/package/chalk).
-
-- [ESLint](https://eslint.org/): A static code analysis tool for identifying problematic patterns found in JavaScript code. It covers both code quality and coding style issues. Learn more [here](https://eslint.org/).
-
-- [pkg](https://www.npmjs.com/package/pkg): It is used to package a Node.js project into an executable that can be run even on devices without Node.js installed. Learn more [here](https://www.npmjs.com/package/pkg).
-
-- [JSDoc](https://www.npmjs.com/package/jsdoc): An open source API documentation generator for Javascript. It allows developers to document their code through comments. It is supported only for Node.js versions > `v8.15.0`. Learn more [here](https://devdocs.io/jsdoc/).
 ## TL; DR
 
 Open terminal and type the following:
@@ -280,9 +210,3 @@ Open terminal and type the following:
 10. `npm run help` : Displays all supported user commands.
 
 11. `node src/index.js data/input.txt` : Runs the application in file mode.
-
-
-if (isAwesome) {
-    // thanks in advance :p
-    starThisRepository();
-}
